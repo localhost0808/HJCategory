@@ -13,19 +13,9 @@ Decrease the amount of your code.
 Create UIView object dot syntax Invoke.Set UIView property.(chain-type structure).
 }
 
-#pch_AF = <<-EOS
+s.source_files = 'HJCategoryDemo/HJCategory/**/*.{h,m}'
 
-#EOS
 
-s.source_files = 'HJCategoryDemo/HJCategory/*.{h,m}'
-
-#s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/CommonCrypto" }
-s.ios.frameworks = 'Foundation', 'UIKit'
-s.tvos.frameworks = 'Foundation', 'UIKit'
-s.osx.frameworks = 'Foundation', 'AppKit'
-
-s.ios.deployment_target = '8.0' # minimum SDK with autolayout
-s.osx.deployment_target = '10.7' # minimum SDK with autolayout
-s.tvos.deployment_target = '9.0' # minimum SDK with autolayout
+s.frameworks = "Foundation","UIKit"
 s.requires_arc = true
 end
