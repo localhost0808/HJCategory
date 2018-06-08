@@ -18,16 +18,26 @@ void getPropertyFromDictionary (NSDictionary *dict) {
     NSMutableString *propertyArr = [NSMutableString string];
     [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull propertyName, id  _Nonnull value, BOOL * _Nonnull stop) {
         NSString *code = @"";
-        if ([value isKindOfClass:NSClassFromString(@"bolean")]||[value isKindOfClass:NSClassFromString(@"boolean")]||[value isKindOfClass:NSClassFromString(@"__Boolean")]) {
+        if ([value isKindOfClass:NSClassFromString(@"bolean")]||[value isKindOfClass:NSClassFromString(@"boolean")]||[value isKindOfClass:NSClassFromString(@"__Boolean")]||[value isKindOfClass:NSClassFromString(@"BOOL")]) {
+
             code = [NSString stringWithFormat:@"@property (nonatomic,assign) BOOL %@;",propertyName];
-        }else if ([value isKindOfClass:NSClassFromString(@"__NSCFArray")]) {
+
+        }else if ([value isKindOfClass:NSClassFromString(@"__NSCFArray")]||[value isKindOfClass:NSClassFromString(@"__NSSingleObjectArrayI")]) {
+
             code = [NSString stringWithFormat:@"@property (nonatomic,copy) NSArray *%@;",propertyName];
+
         }else if ([value isKindOfClass:NSClassFromString(@"__NSCFString")]) {
+
             code = [NSString stringWithFormat:@"@property (nonatomic,copy) NSString *%@;",propertyName];
-        }else if ([value isKindOfClass:NSClassFromString(@"__NSCFDictionary")]) {
+
+        }else if ([value isKindOfClass:NSClassFromString(@"__NSCFDictionary")]||[value isKindOfClass:NSClassFromString(@"__NSDictionaryI")]) {
+
             code = [NSString stringWithFormat:@"@property (nonatomic,strong) NSDictionary *%@;",propertyName];
+
         }else if ([value isKindOfClass:NSClassFromString(@"__NSCFNumber")]) {
+
             code = [NSString stringWithFormat:@"@property (nonatomic,assign) NSInteger %@;",propertyName];
+
         };
         NSString *str =[NSString stringWithFormat:@"/************%@************/",propertyName];
         [propertyArr appendFormat:@"\n%@\n%@\n",str,code];
