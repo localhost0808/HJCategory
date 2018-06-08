@@ -65,7 +65,6 @@
 		4AB0985220CA261B0012FA8F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4AB0985320CA261B0012FA8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AB0985420CA261B0012FA8F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4AB0985620CA261B0012FA8F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4AB0985820CA261B0012FA8F /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		4AB0985920CA261B0012FA8F /* NSObject+Assist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Assist.h"; sourceTree = "<group>"; };
 		4AB0985A20CA261B0012FA8F /* NSMutableArray+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Category.h"; sourceTree = "<group>"; };
@@ -170,7 +169,6 @@
 		4AB0985520CA261B0012FA8F /* HJCategory */ = {
 			isa = PBXGroup;
 			children = (
-				4AB0985620CA261B0012FA8F /* README.md */,
 				4AB0985E20CA261B0012FA8F /* HJCategoryHeader.h */,
 				4AB0985720CA261B0012FA8F /* NS+Category */,
 				4AB0985F20CA261B0012FA8F /* UI+Category */,
