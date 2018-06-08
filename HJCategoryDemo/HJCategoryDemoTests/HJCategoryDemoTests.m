@@ -1,6 +1,6 @@
 //
-//  HJCategoryTests.m
-//  HJCategoryTests
+//  HJCategoryDemoTests.m
+//  HJCategoryDemoTests
 //
 //  Created by Harry on 2018/6/8.
 //  Copyright © 2018年 Harry. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface HJCategoryTests : XCTestCase
+@interface HJCategoryDemoTests : XCTestCase
 
 @end
 
-@implementation HJCategoryTests
+@implementation HJCategoryDemoTests
 
 - (void)setUp {
     [super setUp];

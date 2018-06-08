@@ -49,15 +49,15 @@
 
 
 /**
- * Category provide UIView Creat Defualt View,and custom UIView Constrution function.
+ * Category provide UIView Create Defualt View,and custom UIView Constrution function.
  */
 // Marks UIView and UIView subClass View Class Constrution function (C define function).
-UIView * viewCreat(void);
-UIView * viewCreatAddSubView(__weak id superView);
-UIView * viewCreatFrame(CGRect rect);
-UIView * viewCreatBackground(UIColor *color);
-UIView * viewCreatParam(CGRect rect,UIColor *color,__weak id superView);
-UIView * viewCreatParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView);
+UIView * viewCreate(void);
+UIView * viewCreateAddSubView(__weak id superView);
+UIView * viewCreateFrame(CGRect rect);
+UIView * viewCreateBackground(UIColor *color);
+UIView * viewCreateParam(CGRect rect,UIColor *color,__weak id superView);
+UIView * viewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView);
 //@end
 //
 //
@@ -80,16 +80,16 @@ UIView * viewCreatParamMore(CGRect rect,UIColor *color,__weak id target,NSString
 -(UIButton *(^)(__weak id,NSString *))buttonAddTarget;
 
 // Marks UIButton and UIButton subClass View Class Constrution function (C define function).
-UIButton * buttonCreat(void);
-UIButton * buttonCreatFrame(CGRect rect);
-UIButton * buttonCreatTitle(NSString *title);
-UIButton * buttonCreatTitleColor(UIColor *color);
-UIButton * buttonCreatBGColor(UIColor *color);
-UIButton * buttonCreatImage(UIImage *image);
-UIButton * buttonCreatBGImage(UIImage *image);
-UIButton * buttonCreatFont(CGFloat fontSize);
-UIButton * buttonCreatTarget(__weak id target,NSString *action);
-UIButton * buttonCreatParam(CGRect rect,NSString *title,UIImage *image,__weak id target,NSString *action,__weak id superView);
+UIButton * buttonCreate(void);
+UIButton * buttonCreateFrame(CGRect rect);
+UIButton * buttonCreateTitle(NSString *title);
+UIButton * buttonCreateTitleColor(UIColor *color);
+UIButton * buttonCreateBGColor(UIColor *color);
+UIButton * buttonCreateImage(UIImage *image);
+UIButton * buttonCreateBGImage(UIImage *image);
+UIButton * buttonCreateFont(CGFloat fontSize);
+UIButton * buttonCreateTarget(__weak id target,NSString *action);
+UIButton * buttonCreateParam(CGRect rect,NSString *title,UIImage *image,__weak id target,NSString *action,__weak id superView);
 
 /**
  * Create UILabel object dot syntax Invoke.Set UILabel property.(chain-type structure).
@@ -102,14 +102,14 @@ UIButton * buttonCreatParam(CGRect rect,NSString *title,UIImage *image,__weak id
 -(UILabel *(^)(BOOL))labelAdjustsFontSizeToFitWidth;
 
 // Marks UILabel and UILabel subClass View Class Constrution function (C define function).
-UILabel * labelCreat(void);
-UILabel * labelCreatFrame(CGRect rect);
-UILabel * labelCreatText(NSString *text);
-UILabel * labelCreatTextColor(UIColor *color);
-UILabel * labelCreatBackground(UIColor *color);
-UILabel * labelCreatImage(UIImage *image);
-UILabel * labelCreatBackgroundImage(UIImage *image);
-UILabel * labelCreatFont(CGFloat fontSize);
-UILabel * labelCreatTarget(__weak id target,NSString *action);
-UILabel * labelCreatParam(CGRect rect,NSString *text,__weak id superView);
+UILabel * labelCreate(void);
+UILabel * labelCreateFrame(CGRect rect);
+UILabel * labelCreateText(NSString *text);
+UILabel * labelCreateTextColor(UIColor *color);
+UILabel * labelCreateBackground(UIColor *color);
+UILabel * labelCreateImage(UIImage *image);
+UILabel * labelCreateBackgroundImage(UIImage *image);
+UILabel * labelCreateFont(CGFloat fontSize);
+UILabel * labelCreateTarget(__weak id target,NSString *action);
+UILabel * labelCreateParam(CGRect rect,NSString *text,__weak id superView);
 @end

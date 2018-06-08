@@ -149,28 +149,28 @@ return view;
 }
 
 # pragma mark --- Create UIView Function
-UIView * viewCreat(void) {
+UIView * viewCreate(void) {
     return UIView.new;
 }
-UIView * viewCreatAddSubView(__weak id superView) {
-    return viewCreat().viewAddSuperView(superView);
+UIView * viewCreateAddSubView(__weak id superView) {
+    return viewCreate().viewAddSuperView(superView);
 }
 
-UIView * viewCreatFrame (CGRect rect) {
-    return viewCreat().viewFrame(rect);
+UIView * viewCreateFrame (CGRect rect) {
+    return viewCreate().viewFrame(rect);
 }
 
-UIView * viewCreatBackground (UIColor *color) {
-    return viewCreat().viewColor(color);
+UIView * viewCreateBackground (UIColor *color) {
+    return viewCreate().viewColor(color);
 }
 
-UIView * viewCreatParam(CGRect rect,UIColor *color,__weak id superView) {
-    return viewCreat().viewFrame(rect).viewColor(color).viewAddSuperView(superView);
+UIView * viewCreateParam(CGRect rect,UIColor *color,__weak id superView) {
+    return viewCreate().viewFrame(rect).viewColor(color).viewAddSuperView(superView);
 }
 
-UIView * viewCreatParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView) {
+UIView * viewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView) {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(action)];
-    return viewCreat().viewFrame(rect).viewColor(color).viewAddSuperView(superView).viewAddGestureRecognizer(tap);
+    return viewCreate().viewFrame(rect).viewColor(color).viewAddSuperView(superView).viewAddGestureRecognizer(tap);
 }
 //@end
 
@@ -286,36 +286,36 @@ UIView * viewCreatParamMore(CGRect rect,UIColor *color,__weak id target,NSString
 }
 
 // Marks UIButton and UIButton subClass View Class Constrution function (C define function).
-UIButton * buttonCreat(void) {
+UIButton * buttonCreate(void) {
     return [UIButton buttonWithType:UIButtonTypeCustom];
 }
 
-UIButton * buttonCreatFrame(CGRect rect) {
-    return (UIButton *)buttonCreat().viewFrame;
+UIButton * buttonCreateFrame(CGRect rect) {
+    return (UIButton *)buttonCreate().viewFrame;
 }
-UIButton * buttonCreatTitle(NSString *title) {
-    return buttonCreat().buttonTitle(title);
+UIButton * buttonCreateTitle(NSString *title) {
+    return buttonCreate().buttonTitle(title);
 }
-UIButton * buttonCreatTitleColor(UIColor *color) {
-    return buttonCreat().buttonTitleColor(color);
+UIButton * buttonCreateTitleColor(UIColor *color) {
+    return buttonCreate().buttonTitleColor(color);
 }
-UIButton * buttonCreatBGColor(UIColor *color) {
-    return buttonCreat().buttonBGColor(color);
+UIButton * buttonCreateBGColor(UIColor *color) {
+    return buttonCreate().buttonBGColor(color);
 }
-UIButton * buttonCreatImage(UIImage *image) {
-    return buttonCreat().buttonImage(image);
+UIButton * buttonCreateImage(UIImage *image) {
+    return buttonCreate().buttonImage(image);
 }
-UIButton * buttonCreatBGImage(UIImage *image) {
-    return buttonCreat().buttonBGImage(image);
+UIButton * buttonCreateBGImage(UIImage *image) {
+    return buttonCreate().buttonBGImage(image);
 }
-UIButton * buttonCreatFont(CGFloat fontSize) {
-    return buttonCreat().buttonFontSize(fontSize);
+UIButton * buttonCreateFont(CGFloat fontSize) {
+    return buttonCreate().buttonFontSize(fontSize);
 }
-UIButton * buttonCreatTarget(__weak id target,NSString *action) {
-    return buttonCreat().buttonAddTarget(target,action);
+UIButton * buttonCreateTarget(__weak id target,NSString *action) {
+    return buttonCreate().buttonAddTarget(target,action);
 }
-UIButton * buttonCreatParam(CGRect rect,NSString *title,UIImage *image,__weak id target,NSString *action,__weak id superView) {
-    return buttonCreat().viewFrame(rect).buttonTitle(title).buttonBGImage(image).viewAddSuperView(superView).buttonAddTarget(target,action);
+UIButton * buttonCreateParam(CGRect rect,NSString *title,UIImage *image,__weak id target,NSString *action,__weak id superView) {
+    return buttonCreate().viewFrame(rect).buttonTitle(title).buttonBGImage(image).viewAddSuperView(superView).buttonAddTarget(target,action);
 }
 
 # pragma mark --- UILabel
@@ -378,27 +378,27 @@ UILabel *label = (UILabel *)self;
 }
 
 // Marks UILabel and UILabel subClass View Class Constrution function (C define function).
-UILabel * labelCreat(void) {
+UILabel * labelCreate(void) {
     return [UILabel new];
 }
-UILabel * labelCreatFrame(CGRect rect) {
-    return (UILabel *)labelCreat().viewFrame(rect);
+UILabel * labelCreateFrame(CGRect rect) {
+    return (UILabel *)labelCreate().viewFrame(rect);
 }
-UILabel * labelCreatText(NSString *text) {
-    return labelCreat().labelText(text);
+UILabel * labelCreateText(NSString *text) {
+    return labelCreate().labelText(text);
 }
-UILabel * labelCreatTextColor(UIColor *color) {
-    return labelCreat().labelTextColor(color);
+UILabel * labelCreateTextColor(UIColor *color) {
+    return labelCreate().labelTextColor(color);
 }
-UILabel * labelCreatBackground(UIColor *color) {
-    return (UILabel *)labelCreat().viewColor(color);
-}
-
-UILabel * labelCreatFont(CGFloat fontSize) {
-    return labelCreat().labelFontSize(fontSize);
+UILabel * labelCreateBackground(UIColor *color) {
+    return (UILabel *)labelCreate().viewColor(color);
 }
 
-UILabel * labelCreatParam(CGRect rect,NSString *text,__weak id superView) {
-    return labelCreat().viewFrame(rect).viewAddSuperView(superView).labelText(text);
+UILabel * labelCreateFont(CGFloat fontSize) {
+    return labelCreate().labelFontSize(fontSize);
+}
+
+UILabel * labelCreateParam(CGRect rect,NSString *text,__weak id superView) {
+    return labelCreate().viewFrame(rect).viewAddSuperView(superView).labelText(text);
 }
 @end

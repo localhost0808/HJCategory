@@ -1,6 +1,6 @@
 //
 //  main.m
-//  HJCategory
+//  HJCategoryDemo
 //
 //  Created by Harry on 2018/6/8.
 //  Copyright © 2018年 Harry. All rights reserved.
