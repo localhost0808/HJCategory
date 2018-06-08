@@ -12,7 +12,6 @@
 #import "MBProgressHUD+Category.h"  //MBP二次封装、简洁、方便更改
 #import "UIViewController+Category.h" //主要是更换方法
 #import "UITableView+Category.h"
-#import "UIView+Category.h"
 #import "UIView+Construction.h"//构造方法
 #import "UIView+Layout.h"
 
