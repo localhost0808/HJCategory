@@ -13,7 +13,11 @@
 #import "UIViewController+Category.h" //主要是更换方法
 #import "UITableView+Category.h"
 #import "UIView+Category.h"
+#import "UIView+Construction.h"//构造方法
+#import "UIView+Layout.h"
+
 /* NS */
+#import "NSObject+Assist.h"
 #import "NSString+Category.h"
 #import "NSMutableArray+Category.h"
 //#import "NSDic"

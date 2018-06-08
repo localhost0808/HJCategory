@@ -5,32 +5,16 @@
 //  Created by Hodge on 2018/1/2.
 //  Copyright © 2018年 Zs. All rights reserved.
 //
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define DLog(...)
+#endif
 
 #import "NSMutableArray+Category.h"
+#import <objc/runtime.h>
 
 @implementation NSMutableArray (Category)
-+ (void)load {
-    [super load];
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//
-//        id obj = [[self alloc] init];
-//
-//        [obj swizzleMethod:@selector(objectAtIndex:) withMethod:@selector(safeObjectAtIndex:)];
-//        [obj swizzleMethod:@selector(addObject:) withMethod:@selector(safeAddObject:)];
-//    });
-
-    //    __NSSingleObjectArrayI (__NSArrayI) 等同于NSArray;
-    //      __NSArrayM 等同于NSMutableArray;
-
-
-    id cls = objc_getClass("__NSArrayM");
-    Method origMethod = class_getInstanceMethod(cls, @selector(addObject:));
-    Method newMethod = class_getInstanceMethod(cls, @selector(safeAddObject:));
-
-    method_exchangeImplementations(origMethod, newMethod);
-
-}
 
 - (void)safeAddObject:(id)anObject {
     if (anObject) {
@@ -56,17 +40,4 @@
     }
 }
 
-//- (void)swizzleMethod:(SEL)origSelector withMethod:(SEL)newSelector {
-//    Class cls = [self class];
-//    Method origMethod = class_getInstanceMethod(cls, origSelector);
-//    Method newMethod = class_getInstanceMethod(cls, newSelector);
-//
-//    BOOL didAddMethod = class_addMethod(cls, origSelector, method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
-//
-//    if (didAddMethod) {
-//        class_addMethod(cls, newSelector, method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
-//    }else {
-//        method_exchangeImplementations(origMethod, newMethod);
-//    }
-//}
 @end

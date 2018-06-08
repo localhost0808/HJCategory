@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+Category.h"
+#import <objc/runtime.h>
 
 @implementation UIViewController (Category)
 + (void)load {
@@ -41,11 +42,9 @@
 
 - (NSArray *)getAllPropertys {
     unsigned int outCount;
-
     objc_property_t * propertys = class_copyPropertyList([self class], &outCount);//Copy
-
     NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
-
+    
     for (int i = 0; i < outCount; i++) {
         objc_property_t property = propertys[i];
         const char *propertyName = property_getName(property);

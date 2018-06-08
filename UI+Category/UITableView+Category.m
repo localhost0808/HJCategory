@@ -11,7 +11,7 @@
 @implementation UITableView (Category)
 - (void)registerClasss:(NSArray<__kindof Class> *)cellClasss {
     for (Class class in cellClasss) {
-        NSString *identifier = [NSString stringWithFormat:@"%@",NSStringFromClass(class)];
+        NSString *identifier = [NSString stringWithFormat:@"%@IdentifierKey",NSStringFromClass(class)];
         [self registerClass:class forCellReuseIdentifier:identifier];
     }
 }
@@ -20,6 +20,16 @@
         [cellClasss enumerateObjectsUsingBlock:^(__kindof Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [self registerClass:obj forCellReuseIdentifier:identifiers[idx]];
         }];
+}
+
++ (instancetype)tablViewFrame:(CGRect)frame style:(UITableViewStyle)style {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
+    return tableView;
+}
+
+UITableView *tableViewCreate () {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    return tableView;
 }
 
 @end

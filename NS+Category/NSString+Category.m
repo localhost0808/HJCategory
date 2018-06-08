@@ -7,7 +7,6 @@
 //
 
 #import "NSString+Category.h"
-
 @implementation NSString (Category)
 
 @end

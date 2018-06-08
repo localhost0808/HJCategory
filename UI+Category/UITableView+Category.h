@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UITableView (Category)
-
++ (instancetype)tablViewFrame:(CGRect)frame style:(UITableViewStyle)style;
 @end
