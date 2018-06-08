@@ -17,5 +17,6 @@ s.source_files = 'HJCategoryDemo/HJCategory/**/*.{h,m}'
 
 
 s.frameworks = "Foundation","UIKit"
+s.ios.deployment_target = '8.0'
 s.requires_arc = true
 end
