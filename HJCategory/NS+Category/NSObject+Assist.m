@@ -14,7 +14,7 @@
     getPropertyFromDictionary(dict);
 }
 
-void getPropertyFromDictionary (NSDictionary *dict) {
+void getPropertyFromDictionarytest (NSDictionary *dict) {
     NSMutableString *propertyArr = [NSMutableString string];
     [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull propertyName, id  _Nonnull value, BOOL * _Nonnull stop) {
         NSString *code = @"";
@@ -26,18 +26,20 @@ void getPropertyFromDictionary (NSDictionary *dict) {
 
             code = [NSString stringWithFormat:@"@property (nonatomic,copy) NSArray *%@;",propertyName];
 
-        }else if ([value isKindOfClass:NSClassFromString(@"__NSCFString")]) {
+        }else if ([value isKindOfClass:NSClassFromString(@"__NSCFString")]||[value isKindOfClass:NSClassFromString(@"__NSCFString")]) {
 
             code = [NSString stringWithFormat:@"@property (nonatomic,copy) NSString *%@;",propertyName];
 
         }else if ([value isKindOfClass:NSClassFromString(@"__NSCFDictionary")]||[value isKindOfClass:NSClassFromString(@"__NSDictionaryI")]) {
 
-            code = [NSString stringWithFormat:@"@property (nonatomic,strong) NSDictionary *%@;",propertyName];
+            code = [NSString stringWithFormat:@"@property (nonatomic,strong) id %@;/*字典对象*/",propertyName];
 
         }else if ([value isKindOfClass:NSClassFromString(@"__NSCFNumber")]) {
 
             code = [NSString stringWithFormat:@"@property (nonatomic,assign) NSInteger %@;",propertyName];
 
+        }else {
+            code = [NSString stringWithFormat:@"@property (nonatomic,<#assign#>) <#NSInteger#> %@;",propertyName];
         };
         NSString *str =[NSString stringWithFormat:@"/************%@************/",propertyName];
         [propertyArr appendFormat:@"\n%@\n%@\n",str,code];
