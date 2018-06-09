@@ -26,7 +26,7 @@ void getPropertyFromDictionary (NSDictionary *dict) {
 
             code = [NSString stringWithFormat:@"@property (nonatomic,copy) NSArray *%@;",propertyName];
 
-        }else if ([value isKindOfClass:NSClassFromString(@"__NSCFString")]||[value isKindOfClass:NSClassFromString(@"__NSCFString")]) {
+        }else if ([value isKindOfClass:NSClassFromString(@"__NSCFString")]||[value isKindOfClass:NSClassFromString(@"NSTaggedPointerString")]) {
 
             code = [NSString stringWithFormat:@"@property (nonatomic,copy) NSString *%@;",propertyName];
 
