@@ -17,7 +17,6 @@
 
 /* NS */
 #import "NSObject+Assist.h"
-#import "NSString+Category.h"
 #import "NSMutableArray+Category.h"
 //#import "NSDic"
 
