@@ -45,6 +45,7 @@ void getPropertyFromDictionary (NSDictionary *dict) {
     NSLog(@"%@",propertyArr);
 }
 
+
 #pragma mark --- NSObject
 - (NSArray *)getAllPropertys {
     unsigned int outCount;
