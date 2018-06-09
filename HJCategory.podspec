@@ -13,7 +13,7 @@ Decrease the amount of your code.
 Create UIView object dot syntax Invoke.Set UIView property.(chain-type structure).
 }
 
-s.source_files = 'HJCategory'
+s.source_files = 'HJCategory/**/*.{h,m}'
 
 
 s.frameworks = "Foundation","UIKit"
