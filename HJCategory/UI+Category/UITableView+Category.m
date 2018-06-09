@@ -27,9 +27,4 @@
     return tableView;
 }
 
-UITableView *tableViewCreate () {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    return tableView;
-}
-
 @end

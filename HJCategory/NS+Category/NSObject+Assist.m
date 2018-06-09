@@ -14,7 +14,7 @@
     getPropertyFromDictionary(dict);
 }
 
-void getPropertyFromDictionarytest (NSDictionary *dict) {
+void getPropertyFromDictionary (NSDictionary *dict) {
     NSMutableString *propertyArr = [NSMutableString string];
     [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull propertyName, id  _Nonnull value, BOOL * _Nonnull stop) {
         NSString *code = @"";

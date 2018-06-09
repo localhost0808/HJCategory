@@ -15,7 +15,6 @@
 		4AB098E420CA2D170012FA8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB098E320CA2D170012FA8F /* main.m */; };
 		4AB098EE20CA2D170012FA8F /* HJCategoryDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB098ED20CA2D170012FA8F /* HJCategoryDemoTests.m */; };
 		4AB098F920CA2D170012FA8F /* HJCategoryDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB098F820CA2D170012FA8F /* HJCategoryDemoUITests.m */; };
-		4AB0993C20CA2DC20012FA8F /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0992D20CA2DC20012FA8F /* NSString+Category.m */; };
 		4AB0993D20CA2DC20012FA8F /* NSObject+Assist.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0992E20CA2DC20012FA8F /* NSObject+Assist.m */; };
 		4AB0993E20CA2DC20012FA8F /* NSMutableArray+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0992F20CA2DC20012FA8F /* NSMutableArray+Category.m */; };
 		4AB0993F20CA2DC20012FA8F /* UITableView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0993320CA2DC20012FA8F /* UITableView+Category.m */; };
@@ -59,10 +58,8 @@
 		4AB098F420CA2D170012FA8F /* HJCategoryDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HJCategoryDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB098F820CA2D170012FA8F /* HJCategoryDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HJCategoryDemoUITests.m; sourceTree = "<group>"; };
 		4AB098FA20CA2D170012FA8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AB0992A20CA2DC20012FA8F /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		4AB0992B20CA2DC20012FA8F /* NSObject+Assist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Assist.h"; sourceTree = "<group>"; };
 		4AB0992C20CA2DC20012FA8F /* NSMutableArray+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Category.h"; sourceTree = "<group>"; };
-		4AB0992D20CA2DC20012FA8F /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		4AB0992E20CA2DC20012FA8F /* NSObject+Assist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Assist.m"; sourceTree = "<group>"; };
 		4AB0992F20CA2DC20012FA8F /* NSMutableArray+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Category.m"; sourceTree = "<group>"; };
 		4AB0993020CA2DC20012FA8F /* HJCategoryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCategoryHeader.h; sourceTree = "<group>"; };
@@ -173,8 +170,6 @@
 			children = (
 				4AB0992B20CA2DC20012FA8F /* NSObject+Assist.h */,
 				4AB0992E20CA2DC20012FA8F /* NSObject+Assist.m */,
-				4AB0992A20CA2DC20012FA8F /* NSString+Category.h */,
-				4AB0992D20CA2DC20012FA8F /* NSString+Category.m */,
 				4AB0992C20CA2DC20012FA8F /* NSMutableArray+Category.h */,
 				4AB0992F20CA2DC20012FA8F /* NSMutableArray+Category.m */,
 			);
@@ -337,7 +332,6 @@
 				4AB0994120CA2DC20012FA8F /* MBProgressHUD+Category.m in Sources */,
 				4AB0993E20CA2DC20012FA8F /* NSMutableArray+Category.m in Sources */,
 				4AB098D620CA2D160012FA8F /* AppDelegate.m in Sources */,
-				4AB0993C20CA2DC20012FA8F /* NSString+Category.m in Sources */,
 				4AB0994320CA2DC20012FA8F /* UIView+Construction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

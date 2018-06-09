@@ -112,4 +112,51 @@ UILabel * labelCreateBackgroundImage(UIImage *image);
 UILabel * labelCreateFont(CGFloat fontSize);
 UILabel * labelCreateTarget(__weak id target,NSString *action);
 UILabel * labelCreateParam(CGRect rect,NSString *text,__weak id superView);
+
+/**
+ * Create UIImageView object dot syntax Invoke.Set UIImageView property.(chain-type structure).
+ */
+/**
+ * Create UIImageView object dot syntax Invoke.Set UIImageView property.(chain-type structure).
+ */
+-(UIImageView *(^)(NSString *))imageViewImageNamed;
+
+-(UIImageView *(^)(UIImage *))imageViewImage;
+
+UIImageView * imageViewCreate(void);
+
+UIImageView * imageViewCreateImageNamed(NSString * imageNamed);
+
+UIImageView * imageViewCreateImage(UIImage *image);
+
+UIImageView * imageViewCreateAddSubView(__weak id superView);
+
+UIImageView * imageViewCreateFrame (CGRect rect);
+
+UIImageView * imageViewCreateBackground (UIColor *color);
+
+UIImageView * imageViewCreateParam(CGRect rect,NSString *imageNamed,__weak id superView);
+
+UIImageView * imageViewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView);
+
+/**
+ * Create UITableView object dot syntax Invoke.Set UIImageView property.(chain-type structure).
+ */
+/**
+ * Create UITableView object dot syntax Invoke.Set UIImageView property.(chain-type structure).
+ */
+
+-(UITableView *(^)(__weak UIView * headerView))tableViewHeaderView;
+
+-(UITableView *(^)(__weak UIView * headerView))tableViewFooterView;
+
+-(UITableView *(^)(__weak id delegate))tableViewDelegte;
+
+
+UITableView *tableViewCreate(CGRect frame);
+
+UITableView *tableViewCreateParam(CGRect frame,UITableViewStyle style,__weak id superView);
+
+UITableView *tableViewCreateParamMore(CGRect frame,UITableViewStyle style,__weak id superView,__weak id delegate);
+
 @end

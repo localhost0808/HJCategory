@@ -10,4 +10,6 @@
 
 @interface UITableView (Category)
 + (instancetype)tablViewFrame:(CGRect)frame style:(UITableViewStyle)style;
+- (void)registerClasss:(NSArray<__kindof Class> *)cellClasss;
+- (void)registerClasss:(NSArray<__kindof Class> *)cellClasss forCellReuseIdentifiers:(NSArray<__kindof NSString *> *)identifiers;
 @end

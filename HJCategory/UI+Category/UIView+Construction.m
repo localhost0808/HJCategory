@@ -400,4 +400,130 @@ UILabel * labelCreateFont(CGFloat fontSize) {
 UILabel * labelCreateParam(CGRect rect,NSString *text,__weak id superView) {
     return labelCreate().viewFrame(rect).viewAddSuperView(superView).labelText(text);
 }
+
+# pragma mark --- UIImageView
+
+
+#define isUIImageViewDefine \
+if (![self isKindOfClass:[UIImageView class]]) {\
+return self;\
+}\
+UIImageView *imageView = (UIImageView *)self;
+
+
+/**
+ * Create UIImageView object dot syntax Invoke.Set UIImageView property.(chain-type structure).
+ */
+/**
+ * Create UIImageView object dot syntax Invoke.Set UIImageView property.(chain-type structure).
+ */
+-(UIImageView *(^)(NSString *))imageViewImageNamed {
+    return ^id(NSString *imageNamed) {
+        isUIImageViewDefine;
+        imageView.image = [UIImage imageNamed:imageNamed];
+        return imageView;
+    };
+}
+
+-(UIImageView *(^)(UIImage *))imageViewImage {
+    return ^id(UIImage *image) {
+        isUIImageViewDefine;
+        imageView.image = image;
+        return imageView;
+    };
+}
+
+UIImageView * imageViewCreate(void) {
+    return UIImageView.new;
+}
+
+UIImageView * imageViewCreateImageNamed(NSString * imageNamed) {
+    return imageViewCreate().imageViewImageNamed(imageNamed);
+}
+
+UIImageView * imageViewCreateImage(UIImage *image) {
+    return (UIImageView *)imageViewCreate().imageViewImage(image);
+}
+
+UIImageView * imageViewCreateAddSubView(__weak id superView) {
+    return (UIImageView *)imageViewCreate().viewAddSuperView(superView);
+}
+
+UIImageView * imageViewCreateFrame (CGRect rect) {
+    return (UIImageView *)imageViewCreate().viewFrame(rect);
+}
+
+UIImageView * imageViewCreateBackground (UIColor *color) {
+    return (UIImageView *)imageViewCreate().viewColor(color);
+}
+
+UIImageView * imageViewCreateParam(CGRect rect,NSString *imageNamed,__weak id superView) {
+    return (UIImageView *)imageViewCreate().viewFrame(rect).viewAddSuperView(superView).imageViewImageNamed(imageNamed);
+}
+
+UIImageView * imageViewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView) {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(action)];
+    return (UIImageView *)imageViewCreate().viewFrame(rect).viewColor(color).viewAddSuperView(superView).viewAddGestureRecognizer(tap);
+}
+
+#define isUITableView \
+if (![self isKindOfClass:[UITableView class]]) {\
+return self;\
+}\
+UITableView *tableView = (UITableView *)self;
+
+
+/**
+ * Create UITableView object dot syntax Invoke.Set UIImageView property.(chain-type structure).
+ */
+/**
+ * Create UITableView object dot syntax Invoke.Set UIImageView property.(chain-type structure).
+ */
+
+-(UITableView *(^)(__weak UIView * headerView))tableViewHeaderView {
+    return ^id(__weak UIView * headerView) {
+        isUITableView;
+        tableView.tableHeaderView = headerView;
+        return tableView;
+    };
+}
+
+-(UITableView *(^)(__weak UIView * headerView))tableViewFooterView {
+    return ^id(__weak UIView * footerView) {
+        isUITableView;
+        tableView.tableFooterView = footerView;
+        return tableView;
+    };
+}
+
+-(UITableView *(^)(__weak id delegate))tableViewDelegte {
+    return ^id(__weak id delegate) {
+        isUITableView;
+        tableView.delegate = delegate;
+        tableView.dataSource = delegate;
+        return tableView;
+    };
+}
+
+UITableView *tableViewCreate(CGRect frame) {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
+    return tableView;
+}
+
+
+UITableView *tableViewCreateParam(CGRect frame,UITableViewStyle style,__weak id superView) {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
+    [tableView addSubview:superView];
+    return tableView;
+}
+
+UITableView *tableViewCreateParamMore(CGRect frame,UITableViewStyle style,__weak id superView,__weak id delegate) {
+    UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
+    [tableView addSubview:superView];
+    tableView.tableViewDelegte(delegate);
+    return tableView;
+}
+
+
+
 @end
