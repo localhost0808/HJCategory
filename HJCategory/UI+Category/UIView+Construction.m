@@ -118,9 +118,9 @@ return view;
     };
 }
 
--(UIView *(^)(__weak id,NSString *))viewAddTarget {
-    return ^id(__weak id target,NSString *action) {
-        UIGestureRecognizer *tap = [[UIGestureRecognizer alloc] initWithTarget:target action:@selector(action)];
+-(UIView *(^)(__weak id,SEL))viewAddTarget {
+    return ^id(__weak id target,SEL action) {
+        UIGestureRecognizer *tap = [[UIGestureRecognizer alloc] initWithTarget:target action:action];
         [self addGestureRecognizer:tap];
         return self;
     };
@@ -167,8 +167,8 @@ UIView * viewCreateParam(CGRect rect,UIColor *color,__weak id superView) {
     return viewCreate().viewFrame(rect).viewColor(color).viewAddSuperView(superView);
 }
 
-UIView * viewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView) {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(action)];
+UIView * viewCreateParamMore(CGRect rect,UIColor *color,__weak id target,SEL action,__weak id superView) {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
     return viewCreate().viewFrame(rect).viewColor(color).viewAddSuperView(superView).viewAddGestureRecognizer(tap);
 }
 //@end
@@ -276,10 +276,10 @@ UIView * viewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSStrin
     };
 }
 
--(UIButton *(^)(__weak id,NSString *))buttonAddTarget {
-    return ^id(__weak id target,NSString *action) {
+-(UIButton *(^)(__weak id,SEL ))buttonAddTarget {
+    return ^id(__weak id target,SEL action) {
         isButtonDefine;
-        [button addTarget:target action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
         return button;
     };
 }
@@ -310,10 +310,10 @@ UIButton * buttonCreateBGImage(UIImage *image) {
 UIButton * buttonCreateFont(CGFloat fontSize) {
     return buttonCreate().buttonFontSize(fontSize);
 }
-UIButton * buttonCreateTarget(__weak id target,NSString *action) {
+UIButton * buttonCreateTarget(__weak id target,SEL action) {
     return buttonCreate().buttonAddTarget(target,action);
 }
-UIButton * buttonCreateParam(CGRect rect,NSString *title,UIImage *image,__weak id target,NSString *action,__weak id superView) {
+UIButton * buttonCreateParam(CGRect rect,NSString *title,UIImage *image,__weak id target,SEL action,__weak id superView) {
     return buttonCreate().viewFrame(rect).buttonTitle(title).buttonBGImage(image).viewAddSuperView(superView).buttonAddTarget(target,action);
 }
 
@@ -461,8 +461,8 @@ UIImageView * imageViewCreateParam(CGRect rect,NSString *imageNamed,__weak id su
     return (UIImageView *)imageViewCreate().viewFrame(rect).viewAddSuperView(superView).imageViewImageNamed(imageNamed);
 }
 
-UIImageView * imageViewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView) {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(action)];
+UIImageView * imageViewCreateParamMore(CGRect rect,UIColor *color,__weak id target,SEL action,__weak id superView) {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:action];
     return (UIImageView *)imageViewCreate().viewFrame(rect).viewColor(color).viewAddSuperView(superView).viewAddGestureRecognizer(tap);
 }
 

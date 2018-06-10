@@ -38,7 +38,7 @@
 // Marks UIView frame property instead dot syntax.(view.removeGestureRecognizer).return parameter is UIView instace object.
 -(UIView *(^)(UIGestureRecognizer * ))viewRemoveGestureRecognizer;
 // Marks UIView frame property instead dot syntax.(view.addGestureRecognizer(tagate,action(string))).return parameter is UIView instace object.
--(UIView *(^)(__weak id,NSString *))viewAddTarget;
+-(UIView *(^)(__weak id,SEL))viewAddTarget;
 // Marks UIView frame property instead dot syntax.(view.addSubView).return parameter is UIView instace object.
 -(UIView *(^)(UIView * ))viewAddSubView;
 // Marks UIView frame property instead dot syntax.([view.addSubView:self]).return parameter is UIView instace object.
@@ -57,7 +57,7 @@ UIView * viewCreateAddSubView(__weak id superView);
 UIView * viewCreateFrame(CGRect rect);
 UIView * viewCreateBackground(UIColor *color);
 UIView * viewCreateParam(CGRect rect,UIColor *color,__weak id superView);
-UIView * viewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView);
+UIView * viewCreateParamMore(CGRect rect,UIColor *color,__weak id target,SEL action,__weak id superView);
 //@end
 //
 //
@@ -77,7 +77,7 @@ UIView * viewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSStrin
 -(UIButton *(^)(UIColor *color))buttonBGColor;
 -(UIButton *(^)(UIImage *))buttonBGImage;
 -(UIButton *(^)(UIImage *,UIControlState))buttonBGImageState;
--(UIButton *(^)(__weak id,NSString *))buttonAddTarget;
+-(UIButton *(^)(__weak id,SEL))buttonAddTarget;
 
 // Marks UIButton and UIButton subClass View Class Constrution function (C define function).
 UIButton * buttonCreate(void);
@@ -88,8 +88,8 @@ UIButton * buttonCreateBGColor(UIColor *color);
 UIButton * buttonCreateImage(UIImage *image);
 UIButton * buttonCreateBGImage(UIImage *image);
 UIButton * buttonCreateFont(CGFloat fontSize);
-UIButton * buttonCreateTarget(__weak id target,NSString *action);
-UIButton * buttonCreateParam(CGRect rect,NSString *title,UIImage *image,__weak id target,NSString *action,__weak id superView);
+UIButton * buttonCreateTarget(__weak id target,SEL action);
+UIButton * buttonCreateParam(CGRect rect,NSString *title,UIImage *image,__weak id target,SEL action,__weak id superView);
 
 /**
  * Create UILabel object dot syntax Invoke.Set UILabel property.(chain-type structure).
@@ -110,7 +110,7 @@ UILabel * labelCreateBackground(UIColor *color);
 UILabel * labelCreateImage(UIImage *image);
 UILabel * labelCreateBackgroundImage(UIImage *image);
 UILabel * labelCreateFont(CGFloat fontSize);
-UILabel * labelCreateTarget(__weak id target,NSString *action);
+UILabel * labelCreateTarget(__weak id target,SEL action);
 UILabel * labelCreateParam(CGRect rect,NSString *text,__weak id superView);
 
 /**
@@ -137,7 +137,7 @@ UIImageView * imageViewCreateBackground (UIColor *color);
 
 UIImageView * imageViewCreateParam(CGRect rect,NSString *imageNamed,__weak id superView);
 
-UIImageView * imageViewCreateParamMore(CGRect rect,UIColor *color,__weak id target,NSString *action,__weak id superView);
+UIImageView * imageViewCreateParamMore(CGRect rect,UIColor *color,__weak id target,SEL action,__weak id superView);
 
 /**
  * Create UITableView object dot syntax Invoke.Set UIImageView property.(chain-type structure).

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HJCategoryHeader.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    viewCreateParamMore(CGRectMake(0, 0, 100, 30), [UIColor greenColor], self, @selector(viewClick:), self.view);
+
+    buttonCreateParam(CGRectMake(0, 50, 200, 44), @"按钮", nil, self, @selector(viewClick:), self.view).viewRadius(YES).viewColor([UIColor redColor]);
+
+
+
+}
+
+- (void)viewClick:(id)view {
+
 }
 
 
