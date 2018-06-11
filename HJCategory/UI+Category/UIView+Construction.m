@@ -513,13 +513,13 @@ UITableView *tableViewCreate(CGRect frame) {
 
 UITableView *tableViewCreateParam(CGRect frame,UITableViewStyle style,__weak id superView) {
     UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
-    [tableView addSubview:superView];
+    tableView.viewAddSuperView(superView);
     return tableView;
 }
 
 UITableView *tableViewCreateParamMore(CGRect frame,UITableViewStyle style,__weak id superView,__weak id delegate) {
     UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:style];
-    [tableView addSubview:superView];
+    tableView.viewAddSuperView(superView);
     tableView.tableViewDelegte(delegate);
     return tableView;
 }
