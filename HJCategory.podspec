@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name     = 'HJCategory'
-s.version  = '0.0.2'
+s.version  = '0.0.3'
 s.license  = 'MIT'
 s.summary  = 'Create UIView object dot syntax Invoke.Set UIView property.(chain-type structure).'
 s.homepage = 'https://github.com/localhost0808/HJCategory'
@@ -13,7 +13,7 @@ Decrease the amount of your code.
 Create UIView object dot syntax Invoke.Set UIView property.(chain-type structure).
 }
 
-s.source_files = 'HJCategory/*.{h,m}'
+s.source_files = 'HJCategory/**/*.{h,m}'
 
 
 s.frameworks = "Foundation","UIKit"
